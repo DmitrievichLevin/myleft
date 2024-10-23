@@ -44,12 +44,14 @@ jobs:
           aws-region: us-west-1
       - name: checkoutput
         id: checkout
-        run: 'echo ${{ steps.creds.outputs.aws-session-token }}'
+        run: 'echo ${{ steps.creds.outputs.aws-access-key-id }}'
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v21
         with:
           #  input the credentials you used to setup AWS CLI and credentials for the application environment
-          aws_session_token: ${{ steps.creds.outputs.aws-session-token }}
+          aws_access_key: ${{ steps.creds.outputs.aws-access-key-id }}
+          aws_secret_key: ${{ steps.creds.outputs.aws-secret-access-key }}
+          aws_session_token: ${{ steps.creds.outputs.aws_session_token }}
           application_name: my_left_org
           environment_name: Myleftorg-env
           version_label: 'app-${{ steps.format-time.outputs.replaced }}'
