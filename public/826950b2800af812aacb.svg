@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="barcode-icone" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 137.76 120.13">
+  <rect x="3.6" y="3.6" width="130.56" height="112.93" rx="26.39" ry="26.39" fill="none" stroke="#333" stroke-miterlimit="10" stroke-width="7.2"/>
+  <g>
+    <line x1="25.98" y1="94.08" x2="25.98" y2="26.05" fill="none" stroke="#333" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10.08"/>
+    <line x1="68.88" y1="94.08" x2="68.88" y2="26.05" fill="none" stroke="#333" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10.08"/>
+    <line x1="111.78" y1="94.08" x2="111.78" y2="26.05" fill="none" stroke="#333" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10.08"/>
+    <g>
+      <line x1="90.33" y1="94.08" x2="90.33" y2="61.27" fill="none" stroke="#333" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10.08"/>
+      <line x1="90.33" y1="44.52" x2="90.33" y2="26.05" fill="none" stroke="#333" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10.08"/>
+    </g>
+    <g>
+      <line x1="47.43" y1="26.05" x2="47.43" y2="58.86" fill="none" stroke="#333" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10.08"/>
+      <line x1="47.43" y1="75.61" x2="47.43" y2="94.08" fill="none" stroke="#333" stroke-linecap="round" stroke-miterlimit="10" stroke-width="10.08"/>
+    </g>
+  </g>
+</svg>

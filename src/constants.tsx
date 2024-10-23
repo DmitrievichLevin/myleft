@@ -18,8 +18,8 @@ import {
 } from './helpers/reactQuery/queryTypes';
 import Cookies from 'js-cookie';
 import { DragDropInput } from './components/Input/DragDrop/dragdrop';
-import salted from '../public/media/salted_ml_nuts_front.png';
-import unsalted from '../public/media/unsalted_ml_nuts_front.png';
+import salted from './media/salted_ml_nuts_front.png';
+import unsalted from './media/unsalted_ml_nuts_front.png';
 import { ReactNode } from 'react';
 import { SelectPaymentMethod } from './components/Input/PaymentMethod/selectPaymentMethod';
 import { ShippingInfo } from './components/Input/Shipping/shipping';
