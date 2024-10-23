@@ -2,20 +2,16 @@ import {
   FormEventHandler,
   JSXElementConstructor,
   useCallback,
-  useLayoutEffect,
   useMemo,
   useState,
 } from 'react';
 import { FormField } from '../../types';
 import { useLocation } from 'react-router-dom';
 import { FieldComponents } from '../../constants';
-import { MutationFunction } from '@tanstack/react-query';
-import { FormSerializer } from './helpers/serializeForm';
-import { onChange } from 'react-toastify/dist/core/store';
 
 export type SubmitProp = {
   title: string;
-  onSubmit: (...args: any[]) => any | MutationFunction;
+  onSubmit: (...args: any[]) => any;
   onCancel?: (...args: any[]) => void;
   submitElement?: JSXElementConstructor<{
     onClick: (...args: any[]) => void;

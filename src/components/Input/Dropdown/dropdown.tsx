@@ -2,7 +2,6 @@ import { ReactNode, useCallback, useRef, useState } from 'react';
 import cntl from 'cntl';
 import './dropdown.css';
 import Select, { StylesConfig, AriaOnFocus, components } from 'react-select';
-import chroma from 'chroma-js';
 
 export type DropdownProps = {
   value: [] | DropDownOpt | undefined;

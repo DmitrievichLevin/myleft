@@ -12,12 +12,6 @@ import { TextAreaInput } from './components/Input/Textarea/textAreaInput';
 import { FormImageUpload } from './components/Input/FormImage/formImageUpload';
 import { DropdownList } from './components/Input/Dropdown/dropdown';
 import { DurationInput } from './components/Input/Dropdown/Duration/durationInput';
-import {
-  ConstructKeyFactory,
-  QueryKeyFactoryInterface,
-} from './helpers/reactQuery/queryTypes';
-import Cookies from 'js-cookie';
-import { DragDropInput } from './components/Input/DragDrop/dragdrop';
 import salted from './media/salted_ml_nuts_front.png';
 import unsalted from './media/unsalted_ml_nuts_front.png';
 import { ReactNode } from 'react';
@@ -174,7 +168,6 @@ const FieldComponents: Components = {
   currency: CurrencyInput,
   date: DateInput,
   image: FormImageUpload,
-  files: DragDropInput,
   dropdown: DropdownList,
   duration: DurationInput,
   selectPayment: SelectPaymentMethod,
@@ -237,38 +230,6 @@ export const US_STATES = [
 
 // Cookies
 export const AUTH_TOKEN = 'access-token';
-
-export class UserQueryKey {
-  static get base() {
-    return ['__user'];
-  }
-
-  static get guest() {
-    return ['__guest'];
-  }
-  /**
-   * @returns Authenticated | guest QueryKey
-   */
-  static get authenticated() {
-    const token = Cookies.get(AUTH_TOKEN);
-    if (!token) return this.guest;
-    return [...this.base, token];
-  }
-
-  static get isGuest() {
-    const token = Cookies.get(AUTH_TOKEN);
-    if (!token) return true;
-    return false;
-  }
-}
-
-const QUERY_KEY: { [key: string]: QueryKeyFactoryInterface } = {
-  contacts: ConstructKeyFactory('__contacts'),
-  vendors: ConstructKeyFactory('__vendors'),
-  services: ConstructKeyFactory('__services'),
-  appts: ConstructKeyFactory('__appts'),
-  events: ConstructKeyFactory('__events'),
-};
 
 // Routes
 export const HOME = '/';
@@ -350,10 +311,4 @@ const dropDownPillStyles = {
   separator: false,
 };
 
-export {
-  clockHours,
-  FieldComponents,
-  statusTagColorCodes,
-  QUERY_KEY,
-  dropDownPillStyles,
-};
+export { clockHours, FieldComponents, statusTagColorCodes, dropDownPillStyles };
