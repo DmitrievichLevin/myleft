@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Appointment Scheduler",
   "types": "index.d.ts",
-  "homepage": "./build",
+  "homepage": "./build/",
   "scripts": {
     "start": "NODE_ENV=production react-scripts start",
     "dev": "npm-run-all --parallel dev:vars build-css watch:client watch:ts",
@@ -11,7 +11,8 @@
     "watch:client": "webpack-dev-server --mode=development --progress --profile",
     "watch:ts": "tsc -w",
     "build-css": "npx tailwindcss -i ./src/index.css -o ./public/output.css -c tailwind.config.js",
-    "build": "NODE_ENV=production webpack --mode=production --progress --profile",
+    "build2": "NODE_ENV=production webpack --mode=production --progress --profile",
+    "build": "react-scripts build",
     "prod": "react-scripts start"
   },
   "repository": {
