@@ -51,10 +51,10 @@ jobs:
           aws_secret_key: ${{ steps.creds.outputs.aws-secret-access-key }}
           aws_session_token: ${{ steps.creds.outputs.aws_session_token }}
           existing_bucket_name: 'elasticbeanstalk-us-west-1-199195409647'
+          region: us-west-1
           application_name: my_left_org
           environment_name: Myleftorg-env
           version_label: 'app-${{ steps.format-time.outputs.replaced }}'
-          region: us-east-1
           deployment_package: myleftorg.zip
 
       - name: Deployed!
