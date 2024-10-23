@@ -42,6 +42,9 @@ jobs:
           role-to-assume: arn:aws:iam::199195409647:role/media_micro_role
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: us-west-1
+      - name: checkoutput
+        id: checkout
+        run: 'echo ${{ steps.creds.outputs }}'
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v21
         with:
@@ -49,6 +52,7 @@ jobs:
           aws_access_key: '${{ env.ACCESS_KEY }}'
           aws_secret_key: '${{ env.SECRET_ACCESS_KEY }}'
           aws_session_token: ${{ env.AWS_SESSION_TOKEN }}
+          aws_role_arn: ${{ steps.creds.outputs.role_arn }}
           application_name: my_left_org
           environment_name: Myleftorg-env
           version_label: 'app-${{ steps.format-time.outputs.replaced }}'
