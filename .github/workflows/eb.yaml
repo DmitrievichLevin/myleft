@@ -51,8 +51,8 @@ jobs:
           aws_session_token: ${{ steps.creds.outputs.aws_session_token }}
           existing_bucket_name: 'elasticbeanstalk-us-west-1-199195409647'
           region: us-west-1
-          application_name: myleftcommerce
-          environment_name: Myleftcommerce-env
+          application_name: commleft
+          environment_name: Commleft-env
           version_label: 'app-${{ steps.format-time.outputs.replaced }}'
           deployment_package: myleftorg.zip
 
