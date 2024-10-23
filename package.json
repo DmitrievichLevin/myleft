@@ -4,7 +4,7 @@
   "description": "Appointment Scheduler",
   "types": "index.d.ts",
   "scripts": {
-    "start": "NODE_ENV=production webpack --mode=production  --config webpack.config.cjs",
+    "start": "NODE_ENV=production webpack serve --mode=production  --config webpack.config.cjs",
     "dev": "npm-run-all --parallel dev:vars build-css watch:client watch:ts",
     "dev:vars": "NODE_ENV=development",
     "watch:client": "webpack-dev-server --mode=development --progress --profile",
