@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate Deployment Package
         # zip all files except .git
-        run: zip -r myleft.zip * -x "**.git**"
+        run: zip -r myleftorg.zip * -x "**.git**"
 
       - name: Get timestamp
         uses: gerred/actions/current-time@master
@@ -43,9 +43,6 @@ jobs:
           output-credentials: true
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: us-west-1
-      - name: checkoutput
-        id: checkout
-        run: 'echo ${{ steps.creds.outputs.aws-access-key-id }}'
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v21
         with:
