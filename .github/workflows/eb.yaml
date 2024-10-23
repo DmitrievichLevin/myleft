@@ -44,7 +44,7 @@ jobs:
           aws-region: us-west-1
       - name: checkoutput
         id: checkout
-        run: 'echo ${{ steps.creds.outputs.steps.creds.outputs.aws_session_token }}'
+        run: 'echo ${{ steps.creds.outputs.aws-session-token }}'
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v21
         with:
