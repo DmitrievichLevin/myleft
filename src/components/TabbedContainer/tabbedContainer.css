@@ -1,0 +1,42 @@
+.tab-cn::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-cn {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.tab-scrollto-btn{
+    left: calc(100% - 30px);
+}
+
+.tab-scrollto-btn:not(:hover){
+    
+    animation: bounceHorizontal 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) infinite;
+}
+
+.new-tab-content::after{
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "New";
+  border-radius: 99999px;
+  font-size: 8px;
+  padding: 1px 3px;
+  background-color: #FECE71;
+}
+
+.new-tab-content-active::after{
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  content: "New";
+  border-radius: 99999px;
+  font-size: 8px;
+  padding: 1px 3px;
+  color: white;
+}
+
+
+

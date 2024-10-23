@@ -1,0 +1,21 @@
+.toggle-list {
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.toggle-list-open {
+    max-height: 9999px;
+    transition: max-height 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.karat-list {
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.karat-list-open {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease-in-out;
+}

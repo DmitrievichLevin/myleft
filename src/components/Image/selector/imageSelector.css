@@ -1,0 +1,22 @@
+.img-select-btn{
+    position:relative;
+}
+
+.img-select-active{
+    position: relative;
+    outline: 2px solid var(--secondary-blue);
+}
+
+.img-select-active::after{
+    position:absolute;
+    content: '';
+    background: rgba(255,255,255,0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.see-more-btn:hover{
+    outline: 2px solid var(--secondary-blue);
+}

@@ -1,0 +1,43 @@
+
+
+.sgt-ctrl-wrapper{
+    --sgt-br: 0.6rem;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(max-content, 1fr);
+    align-items: center;
+    position: relative;
+    background: #DDDDDD;
+    padding: 3px;
+    border-radius: var(--sgt-br);
+    z-index: 1;
+    height:fit-content;
+    min-width: fit-content;
+}
+
+.sgt-ctrl-rad{
+    display: none;
+}
+
+.sgt-ctrl-opt{
+    font-family: 'Raleway';
+    font-size: 0.7rem;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+    font-weight: 600;
+    background: transparent;
+    min-width: fit-content;
+    z-index: 1;
+}
+
+.sgt-ctrl-bg{
+    position: absolute;
+    background: white;
+    border-radius: 0.4rem;
+    left: 0;
+    z-index: -1;
+    transition: transform 0.5s ease-in-out;
+}

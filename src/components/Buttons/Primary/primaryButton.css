@@ -1,0 +1,38 @@
+.primary-button{
+    background-color: white;
+    box-shadow: var(--btn-shadow);
+    outline: 1px #333 solid;
+    font-weight: 550;
+    font-family: Arial;
+    color: #333;
+}
+
+.primary-button:hover{
+    background-color: #333;
+    color: white;
+    outline: 1px white solid;
+}
+
+.primary-button:focus{
+    background-color: #333;
+    color: white;
+    outline: 1px white solid;
+}
+
+.close-btn{
+    padding: 0px;
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    outline: none !important;
+    background: #ddd !important;
+    border: none !important;
+    box-shadow: none !important;
+    object-fit: contain;
+    transition: opacity 250ms ease-in-out;
+    opacity: 70%;
+    
+}
+
+.close-btn:hover {
+    opacity: 100%;
+}

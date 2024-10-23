@@ -1,0 +1,18 @@
+.secondary-button{
+    background: white;
+    color: #333;
+    box-shadow: var(--btn-shadow);
+    font-weight: 550;
+}
+
+.secondary-button:hover{
+    background: var(--brand-dark-green);
+    color: white;
+    font-size: 500;
+}
+
+.secondary-button:focus{
+    background: var(--brand-dark-green);
+    color: white;
+    font-size: 500;
+}

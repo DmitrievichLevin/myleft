@@ -1,0 +1,142 @@
+.shipping-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    font-family: 'Balto', sans-serif;
+}
+
+.shipping-fields *:not(h2) {
+    font-size: 0.9rem !important;
+    font-family: 'Balto', sans-serif !important;
+    caret-color: white;
+}
+
+
+
+.shipping-fields div:has(input[placeholder='Email']){
+    flex-direction: column;
+    align-items: start !important;
+}
+
+.shipping-fields div:has(input[placeholder='Email']) > input{
+    width: 100%;
+}
+
+.shipping-fields div:has(input[placeholder='Email'])::before{
+    display: flex;
+    align-items: end;
+    content: 'Email';
+    padding: 0px 2px;
+    margin: 0px 2px;
+    min-height: 20px;
+    max-height: 20px;
+    font-size: 0.75rem;
+    text-align: start;
+    color: hsl(0, 0%, 70%);
+}
+
+.shipping-fields > div:nth-child(4), .shipping-fields > div:nth-child(8), .shipping-fields > div:nth-child(10) {
+    margin-right: auto;
+}
+
+.shipping-fields > div:nth-child(5),  .shipping-fields > div:nth-child(11) {
+    margin-left: auto;
+}
+
+.shipping-fields > div:nth-child(9) > :nth-child(3) {
+    margin-left: auto;
+}
+
+
+
+.shipping-fields > div:not(#address-level1-react-select-input):has(input:disabled) > input {
+    color: hsl(0, 0%, 90%) !important;
+}
+
+.shipping-fields input:autofill,
+.shipping-fields input:-webkit-autofill,
+
+.shipping-fields input:-webkit-autofill:active, 
+.shipping-fields input:-internal-autofill-selected
+ {
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    
+}
+
+.shipping-fields > h2 {
+    grid-column: span 2 / span 2;
+    font-weight: 500;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    font-family: 'Lato', sans-serif;
+    align-self: self-start;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top:1rem;
+    color: white;
+
+}
+
+[class*="__control"]{
+    background-color: var(--glory-red) !important;
+    outline: 1px solid var(--glory-secondary-red) !important;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px !important;
+}
+
+[class*="__single-value"], [class*="__control--is-focused"] 
+,[class*="__indicator"], [class*="__indicator"]:hover {
+    color: white !important;
+}
+
+.shipping-fields > div:not(#address-level1-react-select-input, h2) {
+    position: relative;
+    grid-column: span 1 / span 1;
+    background-color: var(--glory-red);
+    color: white;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: default;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    min-height: 38px;
+    outline: 1px solid var(--glory-secondary-red);
+    position: relative;
+    -webkit-transition: all 100ms;
+    transition: all 100ms;
+    border-color: hsl(0, 0%, 80%);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box;
+    border: none;
+    min-width: 200px;
+    max-width: 200px;
+    padding: 2px 8px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.shipping-fields > div:not(#address-level1-react-select-input) > input::placeholder, [class*="__placeholder"] {
+    color: hsl(0, 0%, 80%) !important;
+}
+
+.shipping-fields > div:not(#address-level1-react-select-input) > input {
+    color: white;
+    margin-left: 2px;
+    margin-right: 2px;
+}

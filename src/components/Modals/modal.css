@@ -1,0 +1,44 @@
+.modal-cn{
+    border-radius: 0.5rem;
+}
+
+.modal-content-cn{
+    overflow-y: scroll;
+    max-height: 80%;
+    width: 100%;
+}
+
+.modal-content-cn > div:first-child{
+    height: 100%;
+    width: 100%;
+}
+
+.modal-title {
+    position: relative;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    font-family: 'Lato';
+    font-weight: 500;
+    letter-spacing: 1px;
+    background: var(--glory-red);
+}
+
+
+.modal-title::before{
+    content: '';
+    background-color: white;
+    height: 0.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.modal-title > p {
+    align-self: center;
+    font-size: 1.5rem;
+    color: white;
+    flex: 1 1 0%;
+    text-align: start;
+}

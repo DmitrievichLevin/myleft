@@ -1,0 +1,15 @@
+.form-img-up-cn:hover > .img-btn-cn{
+    display: block !important;
+    background: rgba(0,0,0,0.6);
+}
+
+.form-img-btn-cn{
+    display: none;
+    line-height: 100%;
+    font-size: 50%;
+    font-weight: 600;
+}
+
+.form-img-cn > picture > img {
+    object-fit: cover !important;
+}

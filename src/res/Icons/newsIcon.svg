@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="new-cn" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 902 758.89">
+  <g id="out-g">
+    <path id="front" d="M771.18,724.39H47.3c-7.07,0-12.8-5.73-12.8-12.8V47.3c0-7.07,5.73-12.8,12.8-12.8h614.75c7.07,0,12.8,5.73,12.8,12.8v186.36" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="69"/>
+    <path id="back" d="M674.85,233.66v394.41c0,53.2,43.13,96.33,96.33,96.33h0c53.2,0,96.33-43.13,96.33-96.33V246.45c0-7.07-5.73-12.8-12.8-12.8h-67.4" fill="none" stroke="#555" stroke-linecap="round" stroke-miterlimit="10" stroke-width="69"/>
+  </g>
+  <rect id="im" x="383.47" y="406.21" width="202.34" height="202.34" rx="11.68" ry="11.68" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="32"/>
+  <line id="l3" x1="127.69" y1="406.21" x2="281.85" y2="406.21" fill="none" stroke="#999" stroke-linecap="round" stroke-miterlimit="10" stroke-width="43"/>
+  <line id="l2" x1="127.69" y1="506.21" x2="281.85" y2="506.21" fill="none" stroke="#999" stroke-linecap="round" stroke-miterlimit="10" stroke-width="43"/>
+  <line id="l1" x1="127.69" y1="602.21" x2="281.85" y2="602.21" fill="none" stroke="#999" stroke-linecap="round" stroke-miterlimit="10" stroke-width="43"/>
+  <rect id="hd-icon" x="111.65" y="137.87" width="488.48" height="152.68" rx="16.1" ry="16.1" fill="#999"/>
+</svg>

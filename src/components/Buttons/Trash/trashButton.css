@@ -1,0 +1,15 @@
+.trash-button:hover {
+    filter: brightness(10);
+    content: url('../../../res/Icons/trashOpenIcon.svg')
+}
+
+.trash-button-cn:hover > img {
+    filter: brightness(10);
+    content: url('../../../res/Icons/trashOpenIcon.svg')
+}
+
+.trash-button-cn:hover{
+    background: var(--error-red);
+    border: solid white 1px;
+    box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.3);
+}

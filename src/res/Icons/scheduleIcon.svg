@@ -1,0 +1,29 @@
+<svg id="cal-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 936.52 981.5">
+  <path id="cal-body" d="M906.52,339.21v516.75c0,52.76-42.77,95.54-95.54,95.54H125.54c-52.76,0-95.54-42.77-95.54-95.54V339.21" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+  <g id="cal-dts">
+    <g id="drow-1">
+      <rect x="508.26" y="439.64" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+      <rect x="341.96" y="439.64" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+      <rect x="674.55" y="439.64" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+    </g>
+    <g id="drow-2">
+      <rect x="508.26" y="595.94" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+      <rect x="341.96" y="595.94" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+      <rect x="674.55" y="595.94" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+      <rect x="175.67" y="595.94" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+    </g>
+    <g id="drow-3">
+      <rect x="508.26" y="752.23" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+      <rect x="341.96" y="752.23" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+      <rect x="175.67" y="752.23" width="86.3" height="86.3" rx="15.69" ry="15.69" fill="#555" stroke-width="0"/>
+    </g>
+  </g>
+  <g id="cal-head">
+    <rect id="bind-2" x="602.08" y="20.5" width="118.07" height="199.86" rx="12" ry="12" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="41"/>
+    <rect id="bind-1" x="216.36" y="20.5" width="118.07" height="199.86" rx="12" ry="12" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="41"/>
+    <line id="bind-m" x1="334.43" y1="112.67" x2="602.08" y2="112.67" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+    <path id="cal-h-r" d="M720.15,112.67h90.1c53.16,0,96.26,35.64,96.26,79.61v152.92" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+    <path id="cal-h" d="M216.36,112.67h-90.1c-53.16,0-96.26,35.64-96.26,79.61v152.92" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+  </g>
+  <line id="cal-body-2" data-name="cal-body" x1="30" y1="339.21" x2="906.52" y2="339.21" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="41"/>
+</svg>

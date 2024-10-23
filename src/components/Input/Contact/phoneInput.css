@@ -1,0 +1,163 @@
+*{
+--phn-input-w: 40px;
+--phn-input-h: 60px;
+--phn-input-grid-space: 4px;
+--phn-input-grid-gap: 3px;
+--phn-input-font-size: 2rem;
+--phn-num-grid: var(--phn-input-w) var(--phn-input-w) var(--phn-input-w) var(--phn-input-grid-space) var(--phn-input-w) var(--phn-input-w) var(--phn-input-w) var(--phn-input-grid-space) var(--phn-input-w) var(--phn-input-w) var(--phn-input-w) var(--phn-input-w);
+
+}
+
+
+.phn-wrapper-cn {
+    position: relative;
+}
+
+.phn-grid-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.phn-grid-cn{
+    display: grid;
+    gap: var(--phn-input-grid-space);
+    grid-template-columns: var(--phn-num-grid);
+    font-family: 'Roboto';
+}
+
+.phn-grid-cn:has(:nth-child(1):focus) ~ * { --nth-child: 1;}
+.phn-grid-cn:has(:nth-child(2):focus) ~ * { --nth-child: 2;}
+.phn-grid-cn:has(:nth-child(3):focus) ~ * { --nth-child: 3;}
+.phn-grid-cn:has(:nth-child(4):focus) ~ * { --nth-child: 5;}
+.phn-grid-cn:has(:nth-child(5):focus) ~ * { --nth-child: 6;}
+.phn-grid-cn:has(:nth-child(6):focus) ~ * { --nth-child: 7;}
+.phn-grid-cn:has(:nth-child(7):focus) ~ * { --nth-child: 9;}
+.phn-grid-cn:has(:nth-child(8):focus) ~ * { --nth-child: 10; }
+.phn-grid-cn:has(:nth-child(9):focus) ~ * { --nth-child: 11; }
+.phn-grid-cn:has(:nth-child(10):focus) ~ * { --nth-child: 12; }
+
+.phn-grid-cn:has(input:nth-of-type(9):focus:valid) + div > div > .phn-input-cursor > hr {
+    margin-left: 75% !important;
+}
+
+.phn-grid-cn:has(input:focus) + div > div > .phn-input-cursor {
+    display: flex !important;
+}
+
+.phn-input-cn:autofill,
+.phn-input-cn:-webkit-autofill,
+
+.phn-input-cn:-webkit-autofill:active, 
+.phn-input-cn:-internal-autofill-selected
+ {
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    
+}
+
+.phn-input-cn:-internal-autofill-previewed
+ {
+    -webkit-text-fill-color: var(--glory-red);
+    -webkit-box-shadow: none;
+    text-shadow: none !important;
+    box-shadow: none;
+    
+}
+
+.phn-input-autofill-cn{
+    position: relative;
+    grid-column: span 1 / span 1;
+}
+
+.phn-input-autofill-bg{
+    position:absolute;
+    background: var(--glory-red);
+    width: 100%;
+    height: 100%;
+    left:0;
+    top: 0;
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.phn-input-autofill-cn > .phn-input-cn{
+    box-shadow: none;
+    background: none;
+    z-index: 1;
+}
+
+.phn-input-cn {
+    position: relative;
+    font-size: var(--phn-input-font-size);
+    width: var(--phn-input-w);
+    height: var(--phn-input-h);
+    background: var(--glory-red);
+    border: none;
+    color: white;
+    font-weight: 600;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    text-shadow: 0 0 5px rgba(255,255,255,50%);
+    border-radius: 10px;
+    caret-color: transparent;
+}
+
+.phn-input-cn:focus{
+    outline: none;
+}
+
+
+.phn-country-code{
+    align-self: start;
+    font-size: var(--phn-input-font-size);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+    font-family: 'Roboto';
+    text-shadow: 1px 1px 3px rgba(0,0,0,15%);
+}
+
+.phn-country-code > span{
+    margin-left: 0.25rem;
+}
+
+.phn-input-cursor {
+    display: none;
+    justify-content: start;
+    align-items: center;
+    grid-column: span 1 / span 1;
+    grid-column-start: var(--nth-child);
+    width: var(--phn-input-w);
+    height: var(--phn-input-h);
+    z-index: 99;
+    background: transparent;
+}
+
+.phn-input-cursor > hr{
+    width: 2px !important;
+    height: 50%;
+    background: white;
+    border: none;
+    border-top: none !important;
+    border-radius: 0.75rem;
+    margin: 0;
+    margin-left: 25%;
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1,0,0,1);
+    animation-duration: 850ms;
+    box-shadow: 0 0 5px rgba(255,255,255,50%);
+}
+
+@keyframes blinker { 
+  from { opacity: 1.0; } to { opacity: 0.1; }
+}
+
+.phn-consent{
+    color: white;
+    font-size: 0.75rem;
+    margin-top: 2rem;
+}

@@ -1,0 +1,54 @@
+#radio-active-btn-cn{
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+}
+
+.service-cn:has(input:not(:checked)) > #radio-active-btn-cn{
+    opacity: 1 !important;
+}
+
+
+.service-cn:hover > #radio-active-btn-cn{
+    display: flex;
+    opacity: 1;
+    pointer-events:all;
+}
+
+.service-cn:focus-within > #radio-active-btn-cn{
+    display: flex;
+    opacity: 1;
+    pointer-events:all;
+}
+
+.service-card-preview{
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.service-cn:has(input:not(:checked)) > .service-card-preview-grad{
+    background: rgba(0,0,0,0.3) !important;
+}
+
+
+.service-card-preview-grad{
+    position: absolute;
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+    content: '';
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0,0) 40%, rgba(0, 0, 0,0.1) 60%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.service-card-preview img{
+    object-fit: cover !important;
+    position: relative;
+    z-index: 0;
+}

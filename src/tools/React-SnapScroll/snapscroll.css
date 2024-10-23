@@ -1,0 +1,14 @@
+
+
+.snap-stn-wrapper{
+    position: relative;
+    container-type: inline-size;
+}
+
+
+.snap-stn-cn {
+  position:relative;
+  overflow: visible;
+  align-items: stretch;
+}
+

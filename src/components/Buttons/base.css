@@ -1,0 +1,42 @@
+.button-lg {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.8rem;
+    font-weight: 550;
+    letter-spacing: 1px;
+    color: #333;
+    border: 1px solid transparent;
+}
+
+.button-md {
+    font-size: 0.75rem;
+    padding: 0.325rem 0.75rem;
+    font-weight: 600;
+    color: #333;
+    border: 1px solid transparent;
+}
+
+
+.button-lg:hover, .button-lg:active, .button-lg:focus, .button-md:hover, .button-md:active, .button-md:focus{
+    background: var(--glory-secondary-blue);
+    color: white;
+    outline: none;
+    border: 1px white solid;
+}
+
+
+
+button:disabled,
+button[disabled]{
+    background-color: #ccc;
+    border-color: #ccc;
+    outline: none;
+    color: #999;
+}
+
+
+button:disabled:hover,button[disabled]:hover{
+    background-color: #ccc;
+    border-color: #ccc;
+    outline: none;
+    color: #999;
+} 

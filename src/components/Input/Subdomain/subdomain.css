@@ -1,0 +1,23 @@
+.subdomain input[type="text"]{
+    text-align: center;
+}
+
+label:has(.subdomain){
+    grid-template-columns: 200px 200px auto;
+}
+label:has(.subdomain)::after{
+    content: ".bev.me";
+    position: relative;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    border-right: 2px solid var(--primary-blue);
+    border-top: 2px solid var(--primary-blue);
+    border-bottom: 2px solid var(--primary-blue);
+    padding: 0px 8px 0px 8px ;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: var(--secondary-blue);
+    color: white;
+    font-size: 0.75rem;
+}

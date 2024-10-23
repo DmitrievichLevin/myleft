@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 924.43 953">
+  <g id="cal-icon">
+    <g id="cal-dts">
+      <g id="drow-1">
+        <rect x="460.43" y="397.73" width="77.67" height="77.67" rx="14.12" ry="14.12" fill="#555"/>
+        <rect x="310.77" y="397.73" width="77.67" height="77.67" rx="14.12" ry="14.12" fill="#555"/>
+        <rect x="610.1" y="397.73" width="77.67" height="77.67" rx="14.12" ry="14.12" fill="#555"/>
+      </g>
+      <g id="drow-2">
+        <rect x="310.77" y="538.39" width="77.67" height="77.67" rx="14.12" ry="14.12" fill="#555"/>
+        <rect x="161.1" y="538.39" width="77.67" height="77.67" rx="14.12" ry="14.12" fill="#555"/>
+      </g>
+      <g id="drow-3">
+        <rect x="310.77" y="679.06" width="77.67" height="77.67" rx="14.12" ry="14.12" fill="#555"/>
+        <rect x="161.1" y="679.06" width="77.67" height="77.67" rx="14.12" ry="14.12" fill="#555"/>
+      </g>
+    </g>
+    <g id="cal-head">
+      <rect id="bind-2" x="544.87" y="20.5" width="106.26" height="179.87" rx="12" ry="12" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="41"/>
+      <rect id="bind-1" x="197.73" y="20.5" width="106.26" height="179.87" rx="12" ry="12" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="41"/>
+      <line id="bind-m" x1="303.99" y1="103.46" x2="544.87" y2="103.46" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+      <path id="cal-h-r" d="M651.14,103.46h81.09c47.85,0,86.63,32.08,86.63,71.65v137.63" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+      <path id="cal-h" d="M197.73,103.46h-81.09c-47.85,0-86.63,32.08-86.63,71.65v137.63" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+    </g>
+    <line id="cal-body" x1="30" y1="307.34" x2="818.86" y2="307.34" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="41"/>
+    <line id="cal-body-2" data-name="cal-body" x1="818.86" y1="307.34" x2="818.86" y2="556.28" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+    <path id="cal-body-3" data-name="cal-body" d="M531.44,858.4H115.98c-47.49,0-85.98-38.5-85.98-85.98v-465.08" fill="none" stroke="#555" stroke-miterlimit="10" stroke-width="60"/>
+  </g>
+  <g id="Layer_4">
+    <g id="os-cl">
+      <path d="M690.83,537.8c48.51,0,94.11,18.89,128.41,53.19,34.3,34.3,53.19,79.9,53.19,128.41s-18.89,94.11-53.19,128.41c-34.3,34.3-79.9,53.19-128.41,53.19s-94.11-18.89-128.41-53.19c-34.3-34.3-53.19-79.9-53.19-128.41s18.89-94.11,53.19-128.41c34.3-34.3,79.9-53.19,128.41-53.19M690.83,485.8c-129.01,0-233.6,104.59-233.6,233.6s104.59,233.6,233.6,233.6,233.6-104.59,233.6-233.6-104.59-233.6-233.6-233.6h0Z" fill="#555"/>
+    </g>
+    <line id="hr-hand" x1="695.5" y1="746.22" x2="587.35" y2="647.85" fill="none" stroke="#555" stroke-linecap="round" stroke-miterlimit="10" stroke-width="40"/>
+    <line id="min-hand" x1="695.5" y1="746.22" x2="759.58" y2="675.76" fill="none" stroke="#555" stroke-linecap="round" stroke-miterlimit="10" stroke-width="40"/>
+  </g>
+</svg>

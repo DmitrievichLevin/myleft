@@ -1,0 +1,33 @@
+.check-select{
+    display:flex;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.check-select-opt{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    justify-content: center;
+    border: 2px solid #ddd;
+    font-family: 'Raleway';
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Raleway';
+    gap: 0.5rem;
+    color: white;
+}
+
+.check-select-opt:hover{
+    border: 2px solid var(--glory-blue);
+}
+
+.check-select-opt > img {
+    object-fit: contain;
+    padding: 0.2rem;
+    border: 1px solid #ddd;
+    background: white;
+}

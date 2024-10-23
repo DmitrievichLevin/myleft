@@ -1,0 +1,11 @@
+.img-up-cn:hover > .img-btn-cn{
+    display: block !important;
+    background: rgba(0,0,0,0.6);
+}
+
+.img-btn-cn{
+    display: none !important;
+    line-height: 100%;
+    font-size: 50%;
+    font-weight: 600;
+}

@@ -1,0 +1,52 @@
+.text-input-cn{
+    position: relative;
+    outline: 1px solid #ccc;
+    padding: 2px 4px;
+}
+
+.text-input-cn:has(input:disabled){
+    outline-color: #BBB;
+    background-color: #EEE;
+    pointer-events: none;
+}
+
+.text-input{  
+    height: 26px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    text-align: start;
+    min-width: 0;
+}
+
+.text-input-lg{
+    height: 36px;
+    font-size: 1.25rem;
+}
+
+.text-input-rounded:has(img){
+    border-radius: 24px;
+    padding: 2px 8px 2px 14px;
+}
+
+.text-input-rounded{
+    border-radius: 24px;
+    padding: 2px 14px;
+}
+
+.text-input:focus{
+    text-align: start;
+}
+
+
+.text-input-cn:has(input:invalid){
+    outline: 1px solid;
+    outline-color: #DB095B;
+}
+
+.text-input-icon{
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+    box-sizing: content-box;
+}

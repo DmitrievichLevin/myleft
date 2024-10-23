@@ -1,0 +1,181 @@
+.cd-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cd-wrapper::before{
+    position: absolute;
+    display: block;
+    content: url('/src/res/Icons/rncLogo.svg');
+    width: 4rem;
+    height: 4rem;
+    left: 105%;
+    bottom: 1.5rem;
+    object-fit: contain;
+}
+.cd-cn{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+    width: fit-content;
+    --cd-br: 0.25rem;
+    color: #fff !important;
+    padding: 0rem 0rem 2rem 0rem;
+    grid-column: 4 span;
+}
+
+
+.cd-item-value-cn{
+    position: relative;
+}
+
+.cd-item-value{
+    position: relative;
+    font-size: 2rem;
+    width: 2rem;
+    line-height: 150%;
+    text-align: center;
+    background: rgb(27, 88, 255);
+    border-radius: var(--cd-br);
+}
+
+.cd-cn > :nth-child(even):not(:last-child){
+    padding-right: 10px;
+}
+
+.cd-cn > :nth-child(odd)::before{
+    position: absolute;
+    display: inline;
+    top: 100%;
+    content: attr(data-content);
+    left: 0;
+    text-align: center;
+    width: 212.5%;
+    font-size: 0.75rem;
+    font-family: 'Balto', sans-serif;
+    line-height: 200%;
+}
+
+.cd-item-value:after,  .cd-item-value:before{
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(27, 88, 255, 0.3) 100%);
+}
+
+.cd-item-value:before {
+    content: '';
+    top: 50%;
+    position: absolute;
+    height: 50%;
+    background: linear-gradient(to top,rgba(39,39,39,0) 0%,rgba(0,0,255,0.3) 100%);
+    z-index: 3;
+    width: 100%;
+    left: 0;
+    border-radius: 0 0 var(--cd-br) var(--cd-br);
+}
+
+.cd-item-value:after {
+    content: '';
+    top: 0;
+    position: absolute;
+    height: 50%;
+    background: linear-gradient(to top,rgba(39,39,39,0) 0%,rgba(0,0,255,0.3) 100%);
+    z-index: 3;
+    width: 100%;
+    left: 0;
+    border-radius: var(--cd-br) var(--cd-br) 0 0;
+}
+
+.cd-item-value > *:not(:first-child){
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    border-radius: var(--cd-br) var(--cd-br) 0 0;
+    left: 0;
+    top: 0;
+    height: 50%;
+    transform-origin: 50% 100%;
+    backface-visibility: hidden;
+}
+
+.cd-item-value-flap-front{
+    animation: 500ms ease-out 0ms 1 normal both running flip-down-front;
+    transform: translate3d(0,0,0);
+    z-index: 2;
+}
+
+.cd-item-value-flap-front:before, .cd-item-value-flap-under:before {
+    top: 100%;
+    transform: translate(-50%,-50%);
+}
+
+.cd-item-value-flap-back{
+    height: 50%;
+    transform: rotateY(180deg) translate3d(0,0,0);
+    transform: translate(-50%,-50%) rotateZ(180deg);
+    animation: 500ms ease-out 0ms 1 normal both running flip-down-back;
+    z-index: 2;
+}
+
+.cd-item-value-flap-back:before {
+    top: 100%;
+    transform: translate(-50%,-50%) rotateZ(180deg);
+    
+}
+
+.cd-item-value-flap::before{
+    content: attr(data-content);
+    position: absolute;
+    left: 50%;
+}
+
+.cd-item-value-flap-under{
+    transform: translate3d(0,0,0);
+    animation: 500ms ease-out 0ms 1 normal both running fade-under;
+    z-index: 1;
+}
+
+
+
+
+@keyframes flip-down-front {
+    0% {
+    transform: rotateX(0deg);
+    background-color: rgb(27, 88, 255);
+    color: #fff;
+}
+
+    100% {
+        transform: rotateX(-180deg);
+        background-color: hsl(223.89999999999998, 100%, 35.9%);
+        color: hsl(0, 0%, 65%);
+    }
+}
+
+@keyframes flip-down-back {
+
+    0% {
+    transform: rotateY(180deg) rotateX(0deg);
+    background-color: hsl(223.89999999999998, 100%, 35.9%);
+    color: hsl(0, 0%, 65%);
+    }
+    100% {
+    transform: rotateY(180deg) rotateX(180deg);
+    background-color: rgb(27, 88, 255);
+    color: #fff;
+    }
+}
+
+@keyframes fade-under {
+    0% {
+    background-color: hsl(223.89999999999998, 100%, 35.9%);
+    color: hsl(0, 0%, 65%);
+    }
+
+    100% {
+    background-color: rgb(27, 88, 255);
+    color: #fff;
+    }
+}
