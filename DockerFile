@@ -6,7 +6,7 @@ ENV PORT=3000
 WORKDIR /my_left
 COPY . /my_left
 EXPOSE ${PORT}
-CMD ["npm", "start"]
+CMD ["npm install react-scripts --legacy-peer-deps && ","npm", "start"]
 
 
 FROM nginx:1.22.1-alpine as prod-stage
