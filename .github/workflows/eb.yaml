@@ -40,6 +40,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::199195409647:role/media_micro_role
+          output-credentials: true
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: us-west-1
       - name: checkoutput
