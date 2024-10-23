@@ -1,7 +1,4 @@
 import { ColorCodes } from './components/Tags/ColorCodeTag';
-import greenCheckMark from './res/Icons/greenCheckmark.svg';
-import circledXMark from './res/Icons/circledXMark.svg';
-import circledPartial from './res/Icons/circledPartial.svg';
 import { FieldComponents as Components } from './types';
 import { RadioButton } from './components/Buttons/Radio/radioButton';
 import { TextInput } from './components/Input/textInput';
@@ -134,71 +131,6 @@ export const CALENDAR_WEEK_DAYS = [
 ];
 
 export const CALENDAR_VIEWS = ['month', 'week', 'day'];
-
-// export const testAppointment: AppointmentData = {
-//   requiredSign: true,
-//   id: 47202308,
-//   businessId: 110292,
-//   invoiceId: 121565426,
-//   repeat: 0,
-//   status: 2,
-//   appointmentStatus: 2,
-//   checkInTime: 1717772564,
-//   checkOutTime: 1717783138,
-//   appointmentDate: '2024-06-07',
-//   appointmentEndDate: '2024-06-07',
-//   appointmentStartTime: 480,
-//   appointmentEndTime: 540,
-//   createTime: 1717701314,
-//   updatedTime: 134046,
-//   isPaid: 1,
-//   noShow: 2,
-//   cancelReason: null,
-//   customerInfo: {
-//     customerId: 16002688,
-//     lastName: 'Alvarez',
-//     firstName: 'Emily',
-//     phoneNumber: '6025826570',
-//     address: null,
-//     email: null,
-//     preferredFrequencyDay: 28,
-//     preferredFrequencyType: 1,
-//     isNewCustomer: false,
-//     referralSourceId: 0,
-//     preferredDay: [0, 1, 2, 3, 4, 5, 6],
-//     preferredTime: [0, 1435],
-//     autoEmail: 0,
-//     autoMessage: 1,
-//   },
-//   discountCode: 'TAKE$5OFF',
-//   additionalNote: null,
-//   paidAmount: 78,
-//   totalAmount: 180,
-//   prepaidStatus: false,
-//   isAutoAccept: false,
-//   addOns: [1],
-// };
-
-const paymentColorCodes: ColorCodes = {
-  0: {
-    label: 'Unpaid',
-    color: 'gray-200',
-    fontColor: 'gray-600',
-    icon: circledXMark,
-  },
-  1: {
-    label: 'Deposited',
-    color: 'blue-100',
-    fontColor: 'blue-600',
-    icon: circledPartial,
-  },
-  2: {
-    label: 'Paid',
-    color: 'green-200',
-    fontColor: 'green-700',
-    icon: greenCheckMark,
-  },
-};
 
 export const APPOINTMENT_STATUS_COLORS: {
   [key: number]: { flag: string; body: string };
@@ -420,7 +352,6 @@ const dropDownPillStyles = {
 
 export {
   clockHours,
-  paymentColorCodes,
   FieldComponents,
   statusTagColorCodes,
   QUERY_KEY,
