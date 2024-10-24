@@ -1,24 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { htmlWebpackPluginTemplateCustomizer } = require("template-ejs-loader");
 
 var isProd = process.env.NODE_ENV === "production";
 
 var plugins = [
   new HtmlWebpackPlugin({
-    template: htmlWebpackPluginTemplateCustomizer({
-      templatePath: path.resolve(__dirname, "src", "index.ejs"),
-      templateEjsLoaderOption: {},
-    }),
+    template: path.resolve(__dirname, "src", "index.html"),
     filename: "index.html",
     manifest: "./src/public/manifest.json",
     inject: "body",
     process,
     minify: false,
   }),
-  new CleanWebpackPlugin(),
 ];
 
 module.exports = {
@@ -89,10 +83,7 @@ module.exports = {
 
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
-    fallback: {
-      querystring: require.resolve("querystring-es3"),
-      path: require.resolve("path-browserify"),
-    },
+    fallback: {},
   },
   stats: {
     children: true,

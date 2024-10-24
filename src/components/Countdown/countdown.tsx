@@ -39,7 +39,7 @@ export const CountDown = ({}) => {
 
   return (
     <div className="cd-wrapper flex flex-col gap-2">
-      <p className="text-[#dddddd] m-0 mt-1 font-[Balto]">
+      <p className="text-[#dddddd] m-0 mt-1 font-[Balto] cd-msg">
         🇺🇸 Limited-time offer! Sale ends in
       </p>
       <div className="cd-cn">

@@ -27,6 +27,7 @@ export type IProduct = {
   src: string;
   alt: string;
   item_type: string;
+  details: string[];
   stock: number;
   desc: string | ReactNode;
   price: number;
@@ -41,8 +42,17 @@ export const PRODUCTS: IProduct[] = [
     src: salted,
     alt: 'salted',
     item_type: 'ITEM',
-    price: 0.01,
+    price: 40.0,
     stock: 56,
+    details: [
+      'Roasted & Salted',
+      'Buttery in texture',
+      'Mild in flavor',
+      'Sealed for freshness',
+      'Grown & Harvested in Oklahoma',
+      '100% recyclable',
+      'NET WT 8oz',
+    ],
     desc: (
       <span>
         These aren't just a delicious treat; they're an ode to{' '}
@@ -64,11 +74,20 @@ export const PRODUCTS: IProduct[] = [
     name: 'Unsalted Cashews',
     catalog_object_id: 'MIWYHLJ3YDEO7HYC2GPDLTGR',
     item_type: 'ITEM',
-    price: 0.01,
+    price: 40.0,
     value: 1,
     src: unsalted,
     alt: 'unsalted',
     stock: 98,
+    details: [
+      'Roasted',
+      'Buttery in texture',
+      'Mild in flavor',
+      'Sealed for freshness',
+      'Grown & Harvested in Oklahoma',
+      '100% recyclable',
+      'NET WT 8oz',
+    ],
     desc: (
       <span>
         These aren't just a delicious treat; they're an ode to{' '}

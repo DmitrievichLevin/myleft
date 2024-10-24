@@ -22,7 +22,7 @@
     display: grid;
     gap: var(--phn-input-grid-space);
     grid-template-columns: var(--phn-num-grid);
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
 .phn-grid-cn:has(:nth-child(1):focus) ~ * { --nth-child: 1;}
@@ -116,7 +116,7 @@
     font-weight: 700;
     color: white;
     margin-bottom: 0.75rem;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     text-shadow: 1px 1px 3px rgba(0,0,0,15%);
 }
 

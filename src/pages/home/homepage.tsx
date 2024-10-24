@@ -6,6 +6,7 @@ import americanPecans from '../../res/Icons/apecans.svg';
 import freeShipping from '../../res/Icons/freeShipping.svg';
 import barcode from '../../res/Icons/barcodeIcon.svg';
 import inStock from '../../res/Icons/inStock.svg';
+import acceptedCards from '../../res/Icons/acceptedCards.svg';
 import './homepage.css';
 import '../../components/Form/form.css';
 import { ImageSelector } from '../../components/Image/selector/imageSelector';
@@ -15,9 +16,7 @@ import { ImageLink } from '../../components/Image/ImageLink/imageLink';
 import { IconTitle } from '../../components/Headers/IconTitle/iconTitle';
 import { IconButton } from '../../components/Buttons/iconButton';
 import { AmountInput } from '../../components/Input/Amount/amountInput';
-import { IProduct, MODAL_KEY, PRODUCTS } from '../../constants';
-import { useModalActions } from '../../components/Modals/modalFactory';
-import { useAppState } from '../../context/appState';
+import { PRODUCTS } from '../../constants';
 import { usePayment } from './hooks/usePayment';
 
 export const Homepage = () => {
@@ -58,6 +57,90 @@ export const Homepage = () => {
 
   return (
     <Page contentClassName="main-pg">
+      <div className="product-col-mobile">
+        <span className="product-actions-info limited-tag self-start">
+          Limited Edition
+        </span>
+        <Image
+          src={PRODUCTS[flavor].src}
+          alt={PRODUCTS[flavor].alt}
+          className={imgCN}
+        >
+          <IconTitle
+            icon={inStock}
+            alt="remaining-stock"
+            className="product-actions-info product-stock"
+            pulse
+          >
+            <span>
+              {PRODUCTS[flavor].stock} Left / 🔥 {200 - PRODUCTS[flavor].stock}{' '}
+              Sold
+            </span>
+          </IconTitle>
+        </Image>
+        <ImageSelector
+          value={flavor}
+          imgs={PRODUCTS}
+          onChange={onChange}
+          className="product-col-img-select"
+        />
+        <p className="product-price">${PRODUCTS[flavor].price}</p>
+        <p className="product-title">
+          <span className="product-brand">My Left Nuts®</span>
+          {PRODUCTS[flavor].name}{' '}
+        </p>
+        <p className="product-desc">{PRODUCTS[flavor].desc}</p>
+        <div
+          className="external-links-container"
+          aria-label="external-links-container"
+        >
+          <ImageLink
+            src={trumpForce}
+            alt="join-trump-force"
+            href="https://trumpforce47.com/"
+            title="Join Tump Force 47"
+          />
+          <ImageLink
+            src={americanPecans}
+            alt="american-pecan-council"
+            href="https://americanpecan.com/"
+            title="Produced by passionate growers and shellers apart of The American Pecan Council."
+          />
+        </div>
+        <div className="buy-now-cn">
+          <AmountInput
+            max={PRODUCTS[flavor].stock}
+            value={amount}
+            onChange={onChangeAmount}
+            sm
+          />
+          <IconButton
+            icon={barcode}
+            text="Buy Now"
+            className="font-Arial buy-now"
+            disabled={disableBuy}
+            onClick={onBuyNow}
+          />
+        </div>
+        <p className="we-accept">
+          We Accept
+          <img
+            src={acceptedCards}
+            alt="accepted-cards"
+            className="we-accept-methods"
+          />
+        </p>
+        <p className="product-details">
+          <span>Details</span>
+          <ul>
+            {PRODUCTS[flavor].details.map((det) => (
+              <li className="detail-item" key="det">
+                {det}
+              </li>
+            ))}
+          </ul>
+        </p>
+      </div>
       <div className="product-info">
         <p className="product-title">
           <span className="product-actions-info limited-tag">
@@ -123,7 +206,7 @@ export const Homepage = () => {
           className="product-col-img-select"
         /> */}
       </div>
-      <div className="flex flex-col w-full h-full">
+      <div className="flex flex-col w-full h-full product-select">
         <FerrisSelect opts={PRODUCTS} onChange={onChange} name="flavor" />
 
         <div className="buy-now-cn">

@@ -191,12 +191,12 @@ footer > p {
 
 footer > * a {
   cursor: pointer;
-  color: white !important;
+  color: white;
   text-decoration: none !important;
 }
 
 footer > * a:hover {
-  color: white !important;
+  color: white;
   text-decoration: underline !important;
 }
 
