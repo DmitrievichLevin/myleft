@@ -130,16 +130,16 @@ export const Homepage = () => {
             className="we-accept-methods"
           />
         </p>
-        <p className="product-details">
+        <div className="product-details">
           <span>Details</span>
           <ul>
-            {PRODUCTS[flavor].details.map((det) => (
-              <li className="detail-item" key="det">
+            {PRODUCTS[flavor].details.map((det, idxd) => (
+              <li className="detail-item" key={`det-${idxd}`}>
                 {det}
               </li>
             ))}
           </ul>
-        </p>
+        </div>
       </div>
       <div className="product-info">
         <p className="product-title">

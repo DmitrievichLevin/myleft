@@ -182,10 +182,29 @@ export const PaymentModal = () => {
       title="Checkout"
     >
       <PaymentForm
-        applicationId="sq0idp-y-_u0g63-2oWr6GlRWIz0g"
-        locationId="LTQWW02K3H9RZ"
+        applicationId="sq0idp-I7Q662T_-XB6RmIMkb5E4Q"
+        locationId="LZBEB5A4749AN"
         cardTokenizeResponseReceived={completePayment}
-        createPaymentRequest={() => formData as any}
+        createPaymentRequest={() => {
+          return {
+            countryCode: 'US',
+            currencyCode: 'USD',
+            lineItems: formData?.line_items,
+            total: formData?.line_items?.reduce(
+              (
+                total: any,
+                { quantity, price }: { quantity: string; price: number },
+                idx: number
+              ) => {
+                total.amount += parseInt(quantity, 10) * price;
+                if (idx === formData?.line_items?.length - 1)
+                  total.amount = `${total.amount}`;
+                return total;
+              },
+              { amount: 0, label: 'Total' }
+            ) as any,
+          } as any;
+        }}
       >
         <MultiForm
           pages={checkoutFields}
