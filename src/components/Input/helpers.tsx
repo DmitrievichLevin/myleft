@@ -14,6 +14,5 @@ export const formatCurrencyNumber = (value: number, sym = '$') => {
 };
 
 export const formatCurrency = (value: string) => {
-  console.log('track format currency', value);
   return `${value}`.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };

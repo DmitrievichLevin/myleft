@@ -63,7 +63,6 @@ export const timeUntil = (date: Dayjs) => {
     const { unit, div } = units[count];
     let quotient = Math.floor(remainder / div);
     remainder = remainder % div;
-    console.log('track until', quotient, remainder, unit);
     if (quotient) time_until += `${time_until ? ' ' : ''}${quotient}${unit}`;
 
     if (!remainder) break;

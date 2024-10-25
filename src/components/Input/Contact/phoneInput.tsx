@@ -70,9 +70,7 @@ export const PhoneNumberInput = ({
         case 'Tab':
           return;
         default:
-          console.log('default case', !key);
           if (/[0-9]/g.test(key) && !target.value) {
-            console.log('track default fired', key, target.value);
             e.preventDefault();
             num = [...number, key];
 
