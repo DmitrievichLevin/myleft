@@ -13,7 +13,8 @@
     "build-css": "npx tailwindcss -i ./src/index.css -o ./public/output.css -c tailwind.config.js",
     "build2": "NODE_ENV=production webpack --mode=production --progress --profile",
     "build": "react-scripts build",
-    "prod": "react-scripts start"
+    "mobile": "webpack-dev-server --host 192.0.0.68 --port 3000",
+    "prod": "HTTPS=true react-scripts start"
   },
   "repository": {
     "type": "git",

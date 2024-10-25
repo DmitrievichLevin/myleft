@@ -23,6 +23,7 @@ export const PhoneNumberInput = ({
   const [number, setNumber] = useState<Array<string>>(
     Array.from((value?.[name] || '').split(''))
   );
+
   const phoneNumberElem = useRef<HTMLInputElement>();
 
   const onKeyDown = useCallback(
@@ -121,9 +122,17 @@ export const PhoneNumberInput = ({
 
   const handleAutofill = useCallback(
     (e: any) => {
+      console.log(
+        'track autofill',
+        e.target,
+        e,
+        window.getComputedStyle(e?.target, null).getPropertyValue('appearance')
+      );
       if (
         (e.target as HTMLInputElement).matches(':autofill') ||
-        (e.target as HTMLInputElement).matches(':-webkit-autofill')
+        (e.target as HTMLInputElement).matches(':-webkit-autofill') ||
+        e?.nativeEvent?.data?.length >= 10 ||
+        e?.target?.value?.length >= 10
       ) {
         let len = e.target.value.length;
         let start = len >= 10 ? (10 - e.target.value.length) * -1 : 0;
@@ -132,6 +141,7 @@ export const PhoneNumberInput = ({
         (phoneNumberElem.current as HTMLInputElement).value = value;
         const sub = value.split('');
         setNumber(sub);
+        e.target.value = sub[0];
 
         if (!phoneWrapper.current) {
           e.target.blur();
@@ -145,7 +155,7 @@ export const PhoneNumberInput = ({
     },
     [phoneWrapper, setNumber]
   );
-
+  console.log('track number', number);
   return (
     <div
       className="phn-wrapper-cn relative flex flex-col items-center justify-center h-[400px]"
@@ -167,6 +177,7 @@ export const PhoneNumberInput = ({
             const inElem = (
               <input
                 type="text"
+                inputMode="numeric"
                 className={phCN(i)}
                 min={1}
                 max={1}
@@ -192,7 +203,20 @@ export const PhoneNumberInput = ({
                   className="phn-input-autofill-cn"
                   key={`phn-digit-num-${i}`}
                 >
-                  {inElem}
+                  {number?.length === 10 ? (
+                    <input
+                      type="text"
+                      inputMode="numeric"
+                      className="phn-input-cn text-center col-span-1 hide-auto-fill"
+                      readOnly
+                      key={`phn-digit-num-hide-auto`}
+                      tabIndex={tabIndex}
+                      value={number[i]}
+                      disabled={disabled}
+                    />
+                  ) : (
+                    inElem
+                  )}
                   <div className="phn-input-autofill-bg" />
                 </div>
               );

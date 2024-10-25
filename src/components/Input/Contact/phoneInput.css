@@ -48,7 +48,8 @@
 .phn-input-cn:-webkit-autofill,
 
 .phn-input-cn:-webkit-autofill:active, 
-.phn-input-cn:-internal-autofill-selected
+.phn-input-cn:-internal-autofill-selected,
+.phn-input-cn:[chrome-autofilled]
  {
     -webkit-background-clip: text !important;
     background-clip: text !important;

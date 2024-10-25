@@ -50,7 +50,7 @@
 
 
 
-.shipping-fields > div:not(#address-level1-react-select-input):has(input:disabled) > input {
+.shipping-fields > div:not(#address-level1-react-select-input-cn):has(input:disabled) > input {
     color: hsl(0, 0%, 90%) !important;
 }
 
@@ -93,7 +93,7 @@
     color: white !important;
 }
 
-.shipping-fields > div:not(#address-level1-react-select-input, h2) {
+.shipping-fields > div:not(#address-level1-react-select-input-cn, h2) {
     position: relative;
     grid-column: span 1 / span 1;
     background-color: var(--glory-red);
@@ -131,11 +131,11 @@
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
-.shipping-fields > div:not(#address-level1-react-select-input) > input::placeholder, [class*="__placeholder"] {
+.shipping-fields > div:not(#address-level1-react-select-input-cn) > input::placeholder, [class*="__placeholder"] {
     color: hsl(0, 0%, 80%) !important;
 }
 
-.shipping-fields > div:not(#address-level1-react-select-input) > input {
+.shipping-fields > div:not(#address-level1-react-select-input-cn) > input {
     color: white;
     margin-left: 2px;
     margin-right: 2px;

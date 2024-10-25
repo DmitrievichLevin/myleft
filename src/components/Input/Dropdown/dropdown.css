@@ -10,7 +10,7 @@
     pointer-events: none;
 }
 
-.autofill-input input {
+.autofill-input {
     width: 0px;
     height: 0px;
     max-width: 0px;
@@ -24,7 +24,7 @@
     margin: 0;
 }
 
-.autofill-input{
+.select-autofill-input{
     height: min-content;
     max-height: 0;
 }

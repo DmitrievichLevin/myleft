@@ -118,7 +118,7 @@ export const DropdownList = ({
       return { ...styles, display: separator ? '' : 'none' };
     },
     dropdownIndicator: (style) => {
-      return { ...style, ...indicatorStyle };
+      return { ...style, ...indicatorStyle, pointerEvents: 'none' };
     },
     option: (styles, { data, isDisabled, isFocused, isSelected }) => {
       return {
@@ -204,60 +204,49 @@ export const DropdownList = ({
   );
 
   return (
-    <Select
-      options={opts}
-      value={opts?.find(({ value: optv }) => optv === value)}
-      classNamePrefix={name}
-      className="autofill-input"
-      formatOptionLabel={formatLabel}
-      onChange={onChange}
-      styles={styles}
-      getOptionValue={getOptionValue}
-      required={required}
-      isDisabled={disabled}
-      id={(id || name) + '-react-select-input'}
-      name={name}
-      placeholder={placeholder}
-      menuPortalTarget={document.body}
-      components={{
-        Control: (props) => {
-          /**
-           * React-Select Bug:
-           * @summary - default Control second child focuses first
-           * on menu open.
-           * - Added Children Input Elements(name must be same as form-field for serialization)
-           */
-
-          return (
-            <>
-              <components.Control {...props} />
-              <input
-                name={name}
-                autoComplete={name}
-                type="text"
-                onChange={handleAutofill}
-                className="autofill-input"
-                tabIndex={-1}
-              />
-              {children}
-            </>
-          );
-        },
-      }}
-      // @ts-ignore
-      isMulti={multi}
-      menuIsOpen={ddOpen}
-      onMenuClose={(...args) => {
-        setDdOpen(false);
-      }}
-      onMenuOpen={(...args) => {
-        setDdOpen(true);
-      }}
-      aria-live="off"
-      isClearable={clearable}
-      blurInputOnSelect
-      menuShouldScrollIntoView
-      isSearchable={searchable}
-    />
+    <div id={`${name}-react-select-input-cn`}>
+      <Select
+        options={opts}
+        value={opts?.find(({ value: optv }) => optv === value)}
+        classNamePrefix={name}
+        className="select-autofill-input"
+        formatOptionLabel={formatLabel}
+        onChange={onChange}
+        styles={styles}
+        getOptionValue={getOptionValue}
+        onBlur={(e: any) => {
+          e.preventDefault();
+        }}
+        required={required}
+        isDisabled={disabled}
+        id={(id || name) + '-react-select-input'}
+        name={name}
+        placeholder={placeholder}
+        menuPortalTarget={document.body}
+        // @ts-ignore
+        isMulti={multi}
+        menuIsOpen={ddOpen}
+        onMenuClose={(...args) => {
+          setDdOpen(false);
+        }}
+        onMenuOpen={(...args) => {
+          setDdOpen(true);
+        }}
+        aria-live="off"
+        isClearable={clearable}
+        blurInputOnSelect
+        menuShouldScrollIntoView
+        isSearchable={searchable}
+      />
+      <input
+        name={name}
+        autoComplete={name}
+        type="text"
+        onChange={handleAutofill}
+        className="autofill-input"
+        tabIndex={-1}
+      />
+      {children}
+    </div>
   );
 };
