@@ -186,24 +186,34 @@ export const PaymentModal = () => {
         locationId="LZBEB5A4749AN"
         cardTokenizeResponseReceived={completePayment}
         createPaymentRequest={() => {
+          const total_line = formData?.line_items?.reduce(
+            (
+              total: any,
+              { quantity, price }: { quantity: string; price: number },
+              idx: number
+            ) => {
+              total.amount += parseInt(quantity, 10) * price;
+              if (idx === formData?.line_items?.length - 1)
+                total.amount = `${total.amount > 100 ? total.amount + 14.99 : total.amount}`;
+              return total;
+            },
+            { amount: 0, label: 'Total' }
+          ) as any;
+
           return {
             countryCode: 'US',
             currencyCode: 'USD',
-            lineItems: formData?.line_items,
-            total: formData?.line_items?.reduce(
-              (
-                total: any,
-                { quantity, price }: { quantity: string; price: number },
-                idx: number
-              ) => {
-                total.amount += parseInt(quantity, 10) * price;
-                if (idx === formData?.line_items?.length - 1)
-                  total.amount = `${total.amount}`;
-                return total;
+            lineItems: [
+              {
+                label: 'Subtotal',
+                type: 'SUBTOTAL',
+                price: total_line.amount,
+                amount: total_line.amount,
               },
-              { amount: 0, label: 'Total' }
-            ) as any,
-          } as any;
+            ],
+            total: total_line,
+            requestShippingContact: true,
+          };
         }}
       >
         <MultiForm

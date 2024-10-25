@@ -74,7 +74,6 @@ export const PRODUCTS: IProduct[] = [
     label: 'Unsalted Cashews',
     name: 'Unsalted Cashews',
     catalog_object_id: 'ESJHYQ5YGTLKEB6YIEFXXTOY',
-    // catalog_object_id: 'MIWYHLJ3YDEO7HYC2GPDLTGR',
     item_type: 'ITEM',
     price: 40.0,
     value: 1,
