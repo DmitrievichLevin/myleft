@@ -122,12 +122,6 @@ export const PhoneNumberInput = ({
 
   const handleAutofill = useCallback(
     (e: any) => {
-      console.log(
-        'track autofill',
-        e.target,
-        e,
-        window.getComputedStyle(e?.target, null).getPropertyValue('appearance')
-      );
       if (
         (e.target as HTMLInputElement).matches(':autofill') ||
         (e.target as HTMLInputElement).matches(':-webkit-autofill') ||
@@ -155,7 +149,7 @@ export const PhoneNumberInput = ({
     },
     [phoneWrapper, setNumber]
   );
-  console.log('track number', number);
+
   return (
     <div
       className="phn-wrapper-cn relative flex flex-col items-center justify-center h-[400px]"
