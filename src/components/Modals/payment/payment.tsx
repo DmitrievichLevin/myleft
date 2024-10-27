@@ -144,7 +144,7 @@ export const PaymentModal = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
   const completePayment = useCallback(
-    async (token: any) => {
+    async (token: any, buyer: any = undefined) => {
       setLoading(true);
       if (!token.token) {
         ErrorNotification('Unable to process payment');
@@ -154,7 +154,11 @@ export const PaymentModal = () => {
       const res = await fetch(
         'https://asiikkfd4b5nepqgoah7ukpfwy0xzcyo.lambda-url.us-west-1.on.aws/order',
         {
-          body: JSON.stringify({ ...formData, source_id: token.token }),
+          body: JSON.stringify({
+            ...formData,
+            source_id: token.token,
+            buyer: buyer,
+          }),
           method: 'POST',
         }
       )
