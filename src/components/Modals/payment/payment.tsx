@@ -152,12 +152,43 @@ export const PaymentModal = () => {
         setLoading(false);
         return;
       }
+      let digit_info = {};
+
+      if (['Apple Pay', 'Google Pay'].includes(token?.details?.method)) {
+        const {
+          addressLines,
+          city,
+          email,
+          familyName,
+          givenName,
+          phone,
+          postalCode,
+          state: level1,
+        } = token?.details?.shipping?.contact;
+
+        digit_info = {
+          shipping_address: {
+            address_line_1: addressLines?.[0],
+            address_line_2: addressLines?.[1] || '',
+            administrative_district_level_1: level1,
+            country: 'US',
+            first_name: givenName.trim(),
+            last_name: familyName.trim(),
+            locality: city,
+            postal_code: postalCode,
+          },
+          phone,
+          buyer_email_address: email,
+          countryCode: 'US',
+          currencyCode: 'USD',
+        };
+      }
       const res = await fetch(
         'https://asiikkfd4b5nepqgoah7ukpfwy0xzcyo.lambda-url.us-west-1.on.aws/order',
         {
           body: JSON.stringify({
             ...formData,
-            ...token,
+            ...digit_info,
             source_id: token.token,
           }),
           method: 'POST',
