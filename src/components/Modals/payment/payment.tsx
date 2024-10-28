@@ -183,17 +183,14 @@ export const PaymentModal = () => {
           currencyCode: 'USD',
         };
       }
-      const res = await fetch(
-        'https://asiikkfd4b5nepqgoah7ukpfwy0xzcyo.lambda-url.us-west-1.on.aws/order',
-        {
-          body: JSON.stringify({
-            ...formData,
-            ...digit_info,
-            source_id: token.token,
-          }),
-          method: 'POST',
-        }
-      )
+      const res = await fetch('https://api.myleft.org/order', {
+        body: JSON.stringify({
+          ...formData,
+          ...digit_info,
+          source_id: token.token,
+        }),
+        method: 'POST',
+      })
         .then((r) => r.json())
         .then((r) => {
           if (r?.payment?.errors) {
