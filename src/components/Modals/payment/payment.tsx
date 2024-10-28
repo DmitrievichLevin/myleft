@@ -183,18 +183,14 @@ export const PaymentModal = () => {
         };
       }
 
-      const headers = new Headers();
-      headers.append('Access-Control-Allow-Origin', '*');
-
-      const res = await fetch('https://api.myleft.org', {
+      const res = await fetch('https://api.myleft.org/order', {
         body: JSON.stringify({
           ...formData,
           ...digit_info,
           source_id: token.token,
         }),
         method: 'POST',
-        mode: 'same-origin' as RequestMode,
-        headers,
+        mode: 'no-cors' as RequestMode,
       })
         .then((r) => r.json())
         .then((r) => {
