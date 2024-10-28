@@ -144,8 +144,7 @@ export const PaymentModal = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const navigate = useNavigate();
   const completePayment = useCallback(
-    async (token: any, buyer: any = undefined, ...rest: any) => {
-      console.log('track buyer details', buyer, rest);
+    async (token: any) => {
       setLoading(true);
       if (!token.token) {
         ErrorNotification('Unable to process payment');
@@ -157,8 +156,8 @@ export const PaymentModal = () => {
         {
           body: JSON.stringify({
             ...formData,
+            ...token,
             source_id: token.token,
-            buyer: buyer,
           }),
           method: 'POST',
         }
