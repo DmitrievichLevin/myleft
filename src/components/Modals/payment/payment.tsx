@@ -184,7 +184,7 @@ export const PaymentModal = () => {
       }
 
       const res = await fetch(
-        'https://wcsu5e4zh2.execute-api.us-west-1.amazonaws.com/order',
+        'https://asiikkfd4b5nepqgoah7ukpfwy0xzcyo.lambda-url.us-west-1.on.aws/order',
         {
           body: JSON.stringify({
             ...formData,
