@@ -205,7 +205,8 @@ export const PaymentModal = () => {
           }
           setLoading(false);
         })
-        .catch(() => {
+        .catch((e) => {
+          console.error(e);
           ErrorNotification('Unable to process payment');
           setLoading(false);
         });
