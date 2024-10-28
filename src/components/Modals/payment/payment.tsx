@@ -183,15 +183,18 @@ export const PaymentModal = () => {
         };
       }
 
-      const res = await fetch('https://api.myleft.org/order', {
-        body: JSON.stringify({
-          ...formData,
-          ...digit_info,
-          source_id: token.token,
-        }),
-        method: 'POST',
-        mode: 'no-cors' as RequestMode,
-      })
+      const res = await fetch(
+        'https://wcsu5e4zh2.execute-api.us-west-1.amazonaws.com/order',
+        {
+          body: JSON.stringify({
+            ...formData,
+            ...digit_info,
+            source_id: token.token,
+          }),
+          method: 'POST',
+          mode: 'no-cors' as RequestMode,
+        }
+      )
         .then((r) => r.json())
         .then((r) => {
           if (r?.payment?.errors) {
