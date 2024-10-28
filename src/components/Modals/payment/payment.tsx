@@ -145,7 +145,6 @@ export const PaymentModal = () => {
   const navigate = useNavigate();
   const completePayment = useCallback(
     async (token: any) => {
-      console.log('track token', token);
       setLoading(true);
       if (!token.token) {
         ErrorNotification('Unable to process payment');
@@ -183,6 +182,10 @@ export const PaymentModal = () => {
           currencyCode: 'USD',
         };
       }
+
+      const headers = new Headers();
+      headers.append('Access-Control-Allow-Origin', '*');
+
       const res = await fetch('https://api.myleft.org/order', {
         body: JSON.stringify({
           ...formData,
@@ -190,6 +193,7 @@ export const PaymentModal = () => {
           source_id: token.token,
         }),
         method: 'POST',
+        headers,
       })
         .then((r) => r.json())
         .then((r) => {
