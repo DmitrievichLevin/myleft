@@ -17,7 +17,6 @@ export const SelectPaymentMethod = () => {
       </div>
       <ApplePay />
       <GooglePay />
-      <CashAppPay shape="semiround" size="medium" width="full" />
     </div>
   );
 };

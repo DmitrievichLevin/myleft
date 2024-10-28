@@ -197,7 +197,7 @@ export const PaymentModal = () => {
       )
         .then((r) => r.json())
         .then((r) => {
-          if (r?.payment?.errors) {
+          if (r?.payment?.errors !== null) {
             ErrorNotification('Payment failed');
           } else {
             closeModal();

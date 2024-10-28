@@ -321368,7 +321368,7 @@ footer > p {
 
 footer > * a {
   cursor: pointer;
-  color: white !important;
+  color: white;
   text-decoration: none !important;
 }
 
