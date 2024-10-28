@@ -16,7 +16,6 @@ export const SelectPaymentMethod = () => {
         <hr />
       </div>
       <ApplePay />
-      <GooglePay />
     </div>
   );
 };

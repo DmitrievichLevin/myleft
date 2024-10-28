@@ -192,12 +192,11 @@ export const PaymentModal = () => {
             source_id: token.token,
           }),
           method: 'POST',
-          mode: 'no-cors' as RequestMode,
         }
       )
         .then((r) => r.json())
         .then((r) => {
-          if (r?.payment?.errors !== null) {
+          if (r?.payment?.errors) {
             ErrorNotification('Payment failed');
           } else {
             closeModal();
