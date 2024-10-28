@@ -186,13 +186,14 @@ export const PaymentModal = () => {
       const headers = new Headers();
       headers.append('Access-Control-Allow-Origin', '*');
 
-      const res = await fetch('https://api.myleft.org/order', {
+      const res = await fetch('https://api.myleft.org', {
         body: JSON.stringify({
           ...formData,
           ...digit_info,
           source_id: token.token,
         }),
         method: 'POST',
+        mode: 'same-origin' as RequestMode,
         headers,
       })
         .then((r) => r.json())
