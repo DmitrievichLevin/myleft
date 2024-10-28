@@ -3,11 +3,12 @@ import Image from '../image';
 import './imageSelector.css';
 import _ from 'lodash';
 import { ReactNode, useCallback, useMemo, useState } from 'react';
+import { IProduct } from '../../../constants';
 
 type IImageSelector = {
   className?: string;
   onChange: (idx: number) => void;
-  imgs: { src: string; alt: string }[];
+  imgs: IProduct[];
   value: number;
   max?: number;
 };
@@ -17,12 +18,14 @@ flex
 w-full
 items-center
 justify-center
+gap-2
 ${max !== undefined ? 'flex-nowrap' : 'flex-wrap'}
 ${className}
 `;
 
 const btnCN = (selected: boolean) => cntl`
 img-select-btn
+relative
 border-none
 bg-none
 rounded-md
@@ -42,9 +45,10 @@ export const ImageSelector = ({
 }: IImageSelector) => {
   return (
     <div className={selectorCN(className, max)}>
-      {imgs.map(({ src, alt }, idx) => {
+      {imgs.map(({ src, alt, ...rest }, idx) => {
         return (
           <button
+            id={!rest?.variations ? rest?.catalog_object_id : ''}
             key={`${alt}-${idx}`}
             onClick={(e) => {
               e.preventDefault();

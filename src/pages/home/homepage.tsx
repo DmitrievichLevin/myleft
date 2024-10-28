@@ -18,9 +18,11 @@ import { IconButton } from '../../components/Buttons/iconButton';
 import { AmountInput } from '../../components/Input/Amount/amountInput';
 import { PRODUCTS } from '../../constants';
 import { usePayment } from './hooks/usePayment';
+import CheckSelect from '../../components/Input/CheckSelect/checkSelect';
 
 export const Homepage = () => {
   const [flavor, setFlavor] = useState(0);
+  const [variation, setVariation] = useState<string>();
   const [accessway, setAccessway] = useState('enter');
 
   const { order, addProduct, onBuyNow, disableBuy, loading } = usePayment();
@@ -34,29 +36,53 @@ export const Homepage = () => {
       setAccessway('exit');
       const timeout = setTimeout(() => {
         setFlavor(v);
+        if (PRODUCTS[v]?.variations) {
+          const def_var = PRODUCTS[v].variations as { value: string }[];
+
+          setVariation(def_var[0].value as string);
+        } else setVariation('');
         setAccessway('enter');
         clearTimeout(timeout);
       }, 500);
     },
-    [setAccessway, setFlavor]
+    [setAccessway, setFlavor, setVariation]
   );
 
-  const amount = useMemo(
-    () =>
-      order.find(
-        ({ catalog_object_id }) =>
-          catalog_object_id === PRODUCTS[flavor].catalog_object_id
-      )?.quantity,
-    [order, flavor]
-  );
+  const amount = useMemo(() => {
+    const found_line = order.find(
+      ({ catalog_object_id, variations = undefined }) => {
+        if (!PRODUCTS[flavor]?.variations)
+          return catalog_object_id === PRODUCTS[flavor].catalog_object_id;
+
+        return variation === catalog_object_id;
+      }
+    );
+
+    return found_line?.quantity;
+  }, [order, flavor, variation]);
 
   const onChangeAmount = useCallback(
-    (val: string) => addProduct(val, PRODUCTS[flavor]),
-    [flavor, addProduct]
+    (val: string) => {
+      if (PRODUCTS[flavor]?.variations) {
+        addProduct(val, {
+          ...PRODUCTS[flavor],
+          catalog_object_id: variation as string,
+        });
+        return;
+      }
+      addProduct(val, PRODUCTS[flavor]);
+    },
+    [flavor, addProduct, variation]
+  );
+
+  const changeVariation = useCallback(
+    (v: any) => setVariation(v),
+    [setVariation, variation]
   );
 
   return (
     <Page contentClassName="main-pg">
+      <style id="psuedo-cart" />
       <div className="product-col-mobile">
         <span className="product-actions-info limited-tag self-start">
           Limited Edition
@@ -84,6 +110,20 @@ export const Homepage = () => {
           onChange={onChange}
           className="product-col-img-select"
         />
+        {PRODUCTS[flavor]?.variations && (
+          <CheckSelect
+            opts={
+              PRODUCTS[flavor]?.variations as {
+                [key: string]: any;
+                value: any;
+                label: string;
+              }[]
+            }
+            value={variation}
+            onChange={changeVariation}
+            name="variation"
+          />
+        )}
         <p className="product-price">${PRODUCTS[flavor].price}</p>
         <p className="product-title">
           <span className="product-brand">My Left Nuts®</span>

@@ -13,6 +13,7 @@ import { FormImageUpload } from './components/Input/FormImage/formImageUpload';
 import { DropdownList } from './components/Input/Dropdown/dropdown';
 import { DurationInput } from './components/Input/Dropdown/Duration/durationInput';
 import salted from './media/salted_ml_nuts_front.png';
+import tee from './media/myleft_tee.png';
 import unsalted from './media/unsalted_ml_nuts_front.png';
 import { ReactNode } from 'react';
 import { SelectPaymentMethod } from './components/Input/PaymentMethod/selectPaymentMethod';
@@ -31,6 +32,7 @@ export type IProduct = {
   stock: number;
   desc: string | ReactNode;
   price: number;
+  variations?: Array<{ label: string; value: string }>;
 };
 
 export const PRODUCTS: IProduct[] = [
@@ -102,6 +104,43 @@ export const PRODUCTS: IProduct[] = [
         <span className="!font-[500]">limited edition</span> offering is the{' '}
         <span className="!font-[500]">best gift</span> for your liberal
         constituents.
+      </span>
+    ),
+  },
+  {
+    label: 'My Left Tee',
+    name: 'My Left Tee',
+    value: 2,
+    catalog_object_id: 'ZKQKIGZP5FZBS3QJRRISLITW',
+    variations: [
+      { label: 's', value: 'GFTHSFQYZEGXEH3XVBTGJ55Z' },
+      { value: 'U6FDE7HZGKEIH6TLDPKU7AP3', label: 'm' },
+      { value: 'OFWRPWQV5USWEPEVU4MPMAYN', label: 'l' },
+      { label: 'xl', value: 'CKGPUH2HUFOQHSRJ3U5WK3Z2' },
+    ],
+    // catalog_object_id: 'O6ZJ6WGMP3QEK642U7DTOZ6T',
+    src: tee,
+    alt: 'tee-shirt',
+    item_type: 'ITEM',
+    price: 100.0,
+    stock: 32,
+    details: [
+      'Oversized fit',
+      '100% organic cotton',
+      'Machine wash inside out',
+      'My Left® signature logo on the chest',
+    ],
+    desc: (
+      <span>
+        Introducing our 100% Cotton Signature Logo T-Shirt, designed for those
+        who love to make a statement! This comfortable tee features a bold logo
+        on the chest that playfully trolls liberal voters, making it the perfect
+        conversation starter for rallies, events, or just casual wear. Crafted
+        from high-quality cotton, it ensures a soft feel and durability,
+        allowing you to showcase your political stance in style. Whether you're
+        attending a campaign event or just hanging out with friends, this
+        t-shirt is a must-have for anyone looking to express their beliefs with
+        humor and confidence.
       </span>
     ),
   },

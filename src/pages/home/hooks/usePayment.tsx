@@ -26,7 +26,12 @@ export const usePayment = (props: { order?: any[] } = { order: [] }) => {
   const { openModal } = useModalActions(MODAL_KEY.PAYMENT_PORTAL);
   const [loading, setLoading] = useState(false);
   const [order, setOrder] = useState<
-    Array<{ catalog_object_id: string; quantity: string; price: number }>
+    Array<{
+      catalog_object_id: string;
+      quantity: string;
+      price: number;
+      variations: { value: string }[];
+    }>
   >(props?.order as any[]);
 
   const onBuyNow = useCallback(async () => {
@@ -43,6 +48,34 @@ export const usePayment = (props: { order?: any[] } = { order: [] }) => {
 
         if (inCart > -1) prev[inCart].quantity = amount;
         else prev = [...prev, { ...product, quantity: amount }];
+
+        const dynamicStyles = document.getElementById(
+          `psuedo-cart`
+        ) as HTMLStyleElement;
+        dynamicStyles.textContent = prev?.reduce(
+          (st, { catalog_object_id, quantity }) => {
+            st += ` #${catalog_object_id}:before{
+              content: '${quantity}';
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              border-radius: 99999px;
+              left: 0;
+              top: 0;
+              font-size: 0.7rem;
+              width: 1rem;
+              height: 1rem;
+              background: #154fd7;
+              color: white;
+              z-index: 3;
+              font-family: Arial;
+              font-weight: 400;
+            }`;
+            return st;
+          },
+          ''
+        );
 
         return [...prev];
       });

@@ -1,7 +1,5 @@
 import { CreditCard } from 'react-square-web-payments-sdk';
 import './checkout.css';
-import { useModalActions } from '../../Modals/modalFactory';
-import { IProduct, MODAL_KEY } from '../../../constants';
 import { usePayment } from '../../../pages/home/hooks/usePayment';
 import { AmountInput } from '../Amount/amountInput';
 import Image from '../../Image/image';
@@ -54,12 +52,17 @@ export const Checkout = ({
         {order?.map((prodct: any) => {
           const { label, quantity, src, alt, stock, price, catalog_object_id } =
             prodct;
+
           return (
             <div className="line-item" key={catalog_object_id}>
               <Image src={src} alt={alt} className="line-preview" />
               <div className="line-item-atn">
                 <div className="line-item-info">
-                  <h2>{label}</h2>
+                  <h2>
+                    {prodct?.variations
+                      ? `${label}: ${prodct.variations.find(({ value: cat }: { value: string; label: string }) => cat === catalog_object_id)?.label}`
+                      : label}
+                  </h2>
                   <p>
                     <span>{quantity}x</span>{' '}
                     <span>{(price * parseInt(quantity, 10)).toFixed(2)}</span>

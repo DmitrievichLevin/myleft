@@ -61,6 +61,7 @@ export default ({ opts, name = '', onChange, value }: ICheckSelect) => {
         {opts.map(({ value: v, label }, idx) => (
           <CheckSelectOptBtn
             key={`ml-select-${name}-opt-${label}-btn`}
+            id={v}
             title={label}
             name={name}
             onClick={() => onOptClick(v, idx)}
